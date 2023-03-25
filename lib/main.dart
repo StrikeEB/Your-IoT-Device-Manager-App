@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               SizedBox(
-                height: 30,
+                height: 100,
                 width: 300,
                 child: ElevatedButton(
                   onPressed: () {
@@ -29,8 +29,9 @@ class MyApp extends StatelessWidget {
                   child: Text('Log a new device'),
                 ),
               ),
+              SizedBox(height: 30),
               SizedBox(
-                height: 30,
+                height: 100,
                 width: 300,
                 child: ElevatedButton(
                   onPressed: () {
@@ -43,8 +44,9 @@ class MyApp extends StatelessWidget {
                   child: Text('View Devices'),
                 ),
               ),
+              SizedBox(height: 30),
               SizedBox(
-                height: 30,
+                height: 100,
                 width: 300,
                 child: ElevatedButton(
                   onPressed: () {
