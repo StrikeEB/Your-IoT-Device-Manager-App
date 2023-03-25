@@ -16,39 +16,45 @@ class MyApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                'Choose an option:',
-                style: TextStyle(fontSize: 30),
+              SizedBox(
+                height: 30,
+                width: 300,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LogDevicePage()),
+                    );
+                  },
+                  child: Text('Log a new device'),
+                ),
               ),
-              SizedBox(height: 30),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LogDevicePage()),
-                  );
-                },
-                child: Text('Log a new device'),
+              SizedBox(
+                height: 30,
+                width: 300,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ViewDevicesPage()),
+                    );
+                  },
+                  child: Text('View Devices'),
+                ),
               ),
-              SizedBox(height: 30),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ViewDevicesPage()),
-                  );
-                },
-                child: Text('View Devices'),
-              ),
-              SizedBox(height: 30),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ApiDataPage()),
-                  );
-                },
-                child: Text('API Data'),
+              SizedBox(
+                height: 30,
+                width: 300,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ApiDataPage()),
+                    );
+                  },
+                  child: Text('API Data'),
+                ),
               ),
             ],
           ),
