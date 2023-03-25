@@ -31,6 +31,9 @@ class MyApp extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => LogDevicePage()),
                     );
                   },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromRGBO(2, 50, 82, 1),
+                  ),
                   child: Text(
                     'Log a new device',
                     style: TextStyle(
@@ -51,6 +54,9 @@ class MyApp extends StatelessWidget {
                           builder: (context) => ViewDevicesPage()),
                     );
                   },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromRGBO(2, 50, 82, 1),
+                  ),
                   child: Text(
                     'View Devices',
                     style: TextStyle(
@@ -70,6 +76,9 @@ class MyApp extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => ApiDataPage()),
                     );
                   },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromRGBO(2, 50, 82, 1),
+                  ),
                   child: Text(
                     'API data',
                     style: TextStyle(
