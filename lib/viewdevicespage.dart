@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'customappbar.dart';
+
 class ViewDevicesPage extends StatefulWidget {
   const ViewDevicesPage({super.key});
 
@@ -10,6 +12,6 @@ class ViewDevicesPage extends StatefulWidget {
 class _ViewDevicesPageState extends State<ViewDevicesPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("View Devices")));
+    return Scaffold(appBar: CustomAppBar.getAppBar('View devices'));
   }
 }

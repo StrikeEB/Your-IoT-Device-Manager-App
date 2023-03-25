@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'customappbar.dart';
+
 class ApiDataPage extends StatefulWidget {
   const ApiDataPage({super.key});
 
@@ -10,6 +12,6 @@ class ApiDataPage extends StatefulWidget {
 class _ApiDataPageState extends State<ApiDataPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("API Data")));
+    return Scaffold(appBar: CustomAppBar.getAppBar('API Data'));
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'customappbar.dart';
 import 'logdevicepage.dart';
 import 'viewdevicespage.dart';
 import 'apidatapage.dart';
@@ -18,15 +19,7 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: unnecessary_new
     return new Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Welcome to your IoT Device Manager',
-          style: TextStyle(
-            fontSize: 20,
-          ),
-        ),
-        backgroundColor: Color.fromRGBO(2, 50, 82, 1),
-      ),
+      appBar: CustomAppBar.getAppBar('Welcome to Your IoT Device Manager'),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
