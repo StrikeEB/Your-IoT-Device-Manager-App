@@ -9,7 +9,12 @@ class MyApp extends StatelessWidget {
       title: 'Landing Page',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Welcome to your IoT Device Manager'),
+          title: Text(
+            'Welcome to your IoT Device Manager',
+            style: TextStyle(
+              fontSize: 20,
+            ),
+          ),
           backgroundColor: Color.fromRGBO(2, 50, 82, 1),
         ),
         body: Center(
@@ -26,7 +31,12 @@ class MyApp extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => LogDevicePage()),
                     );
                   },
-                  child: Text('Log a new device'),
+                  child: Text(
+                    'Log a new device',
+                    style: TextStyle(
+                      fontSize: 30,
+                    ),
+                  ),
                 ),
               ),
               SizedBox(height: 30),
@@ -41,7 +51,12 @@ class MyApp extends StatelessWidget {
                           builder: (context) => ViewDevicesPage()),
                     );
                   },
-                  child: Text('View Devices'),
+                  child: Text(
+                    'View Devices',
+                    style: TextStyle(
+                      fontSize: 30,
+                    ),
+                  ),
                 ),
               ),
               SizedBox(height: 30),
@@ -55,7 +70,12 @@ class MyApp extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => ApiDataPage()),
                     );
                   },
-                  child: Text('API Data'),
+                  child: Text(
+                    'API data',
+                    style: TextStyle(
+                      fontSize: 30,
+                    ),
+                  ),
                 ),
               ),
             ],
@@ -130,7 +150,7 @@ class ViewDevicesPage extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          'This is View Devices',
+          'View Devices',
           style: TextStyle(fontSize: 24),
         ),
       ),
@@ -147,7 +167,7 @@ class ApiDataPage extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          'This is API Data',
+          'API Data',
           style: TextStyle(fontSize: 24),
         ),
       ),
