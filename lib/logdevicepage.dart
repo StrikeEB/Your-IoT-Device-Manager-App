@@ -1,63 +1,100 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'customappbar.dart';
 
-class LogDevicePage extends StatefulWidget {
-  const LogDevicePage({Key? key}) : super(key: key);
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
 
+  runApp(LogDevicePage());
+}
+
+class LogDevicePage extends StatefulWidget {
   @override
   State<LogDevicePage> createState() => _LogDevicePageState();
 }
 
 class _LogDevicePageState extends State<LogDevicePage> {
-  final TextEditingController _what3WordsController = TextEditingController();
-  final TextEditingController _longController = TextEditingController();
-  final TextEditingController _latController = TextEditingController();
-  final TextEditingController _streetController = TextEditingController();
-  final TextEditingController _cityController = TextEditingController();
-  final TextEditingController _postcodeController = TextEditingController();
-  final TextEditingController _dateTimeController = TextEditingController();
+  final controllerWhat3Words = TextEditingController();
+  final controllerLong = TextEditingController();
+  final controllerLat = TextEditingController();
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CustomAppBar.getAppBar('Log a new device'),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            TextFormField(
-              controller: _what3WordsController,
-              decoration: InputDecoration(labelText: 'What3Words:'),
+  Widget build(BuildContext context) => Scaffold(
+        appBar: CustomAppBar.getAppBar('Log a new device'),
+        body: ListView(
+          padding: EdgeInsets.all(16),
+          children: <Widget>[
+            TextField(
+              controller: controllerWhat3Words,
+              decoration: decoration('What3Words'),
             ),
-            TextFormField(
-              controller: _longController,
-              decoration: InputDecoration(labelText: 'Long:'),
+            const SizedBox(height: 24),
+            TextField(
+              controller: controllerLong,
+              decoration: decoration('Long'),
+              keyboardType: TextInputType.number,
             ),
-            TextFormField(
-              controller: _latController,
-              decoration: InputDecoration(labelText: 'Lat:'),
+            const SizedBox(height: 24),
+            TextField(
+              controller: controllerLat,
+              decoration: decoration('Lat'),
+              keyboardType: TextInputType.number,
             ),
-            TextFormField(
-              controller: _streetController,
-              decoration: InputDecoration(labelText: 'Street:'),
-            ),
-            TextFormField(
-              controller: _cityController,
-              decoration: InputDecoration(labelText: 'City:'),
-            ),
-            TextFormField(
-              controller: _postcodeController,
-              decoration: InputDecoration(labelText: 'Postcode:'),
-            ),
-            TextFormField(
-              controller: _dateTimeController,
-              decoration: InputDecoration(labelText: 'Date Time:'),
-            ),
+            const SizedBox(height: 24),
+            const SizedBox(height: 32),
+            ElevatedButton(
+              child: Text('Submit'),
+              onPressed: () {
+                final device = Device(
+                  What3Words: controllerWhat3Words.text,
+                  Long: int.parse(controllerLong.text),
+                  Lat: int.parse(controllerLat.text),
+                );
+
+                createDevice(device);
+
+                Navigator.pop(context);
+              },
+            )
           ],
         ),
-      ),
-    );
+      );
+
+  InputDecoration decoration(String label) => InputDecoration(
+        labelText: label,
+        border: OutlineInputBorder(),
+      );
+
+  Future createDevice(Device device) async {
+    final docDevice =
+        FirebaseFirestore.instance.collection('Device').doc('my-id');
+    device.id = docDevice.id;
+
+    final json = device.toJson();
+    await docDevice.set(json);
   }
+}
+
+class Device {
+  String id;
+  final String What3Words;
+  final int Long;
+  final int Lat;
+
+  Device({
+    this.id = '',
+    required this.What3Words,
+    required this.Long,
+    required this.Lat,
+  });
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'What3Words': What3Words,
+        'Long': Long,
+        'Lat': Lat,
+      };
 }
