@@ -29,6 +29,13 @@
             {
               "client_id": "467482761094-7ph20245pg6mt0sv2kpdu228eh357ap9.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "467482761094-7533h30648qtn8d6qi59b6qfs0h2l2nj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.youriotdevicemanagerapp"
+              }
             }
           ]
         }
