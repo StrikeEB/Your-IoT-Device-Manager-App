@@ -49,9 +49,9 @@ class _LogDevicePageState extends State<LogDevicePage> {
               child: Text('Submit'),
               onPressed: () {
                 final device = Device(
-                  What3Words: controllerWhat3Words.text,
-                  Long: int.parse(controllerLong.text),
-                  Lat: int.parse(controllerLat.text),
+                  what3Words: controllerWhat3Words.text,
+                  long: int.parse(controllerLong.text),
+                  lat: int.parse(controllerLat.text),
                 );
 
                 createDevice(device);
@@ -80,21 +80,21 @@ class _LogDevicePageState extends State<LogDevicePage> {
 
 class Device {
   String id;
-  final String What3Words;
-  final int Long;
-  final int Lat;
+  final String what3Words;
+  final int long;
+  final int lat;
 
   Device({
     this.id = '',
-    required this.What3Words,
-    required this.Long,
-    required this.Lat,
+    required this.what3Words,
+    required this.long,
+    required this.lat,
   });
 
   Map<String, dynamic> toJson() => {
         'id': id,
-        'What3Words': What3Words,
-        'Long': Long,
-        'Lat': Lat,
+        'What3Words': what3Words,
+        'Long': long,
+        'Lat': lat,
       };
 }
