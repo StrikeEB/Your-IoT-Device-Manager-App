@@ -31,6 +31,7 @@ class _LogDevicePageState extends State<LogDevicePage> {
   final controllerDeviceModel = TextEditingController();
   final controllerLongitude = TextEditingController();
   final controllerLatitude = TextEditingController();
+  final controllerAddress = TextEditingController();
   String? _currentAddress;
   Position? _currentPosition;
 
@@ -136,31 +137,16 @@ class _LogDevicePageState extends State<LogDevicePage> {
               decoration: decoration('Latitude'),
             ),
             const SizedBox(height: 24),
-            TextField(
-              controller: TextEditingController(text: _currentAddress),
-              decoration: decoration('Address'),
-            ),
-            const SizedBox(height: 24),
             ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromRGBO(2, 50, 82, 1),
                 ),
                 onPressed: _getCurrentLocation,
-                child: const Text("Get Longitude")),
-            const SizedBox(height: 32),
-            Text(
-              'Latitude: ${_currentPosition?.latitude ?? ""}',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
+                child: const Text("Get coordinates")),
             const SizedBox(height: 24),
-            Text(
-              'Longitude: ${_currentPosition?.longitude ?? ""}',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 24),
-            Text(
-              'Address: ${_currentAddress ?? ""}',
-              style: TextStyle(fontWeight: FontWeight.bold),
+            TextField(
+              controller: TextEditingController(text: _currentAddress),
+              decoration: decoration('Address'),
             ),
             const SizedBox(height: 24),
             ElevatedButton(
@@ -188,11 +174,12 @@ class _LogDevicePageState extends State<LogDevicePage> {
               ),
               onPressed: () {
                 final device = Device(
-                  what3Words: controllerWhat3Words.text,
-                  deviceid: controllerDeviceID.text,
-                  devicemake: controllerDeviceMake.text,
-                  devicemodel: controllerDeviceModel.text,
-                );
+                    what3Words: controllerWhat3Words.text,
+                    deviceid: controllerDeviceID.text,
+                    devicemake: controllerDeviceMake.text,
+                    devicemodel: controllerDeviceModel.text,
+                    longitude: controllerLongitude.text,
+                    latitude: controllerLatitude.text);
 
                 Navigator.pop(context);
 
@@ -202,6 +189,8 @@ class _LogDevicePageState extends State<LogDevicePage> {
                   'Device number': controllerDeviceID.text,
                   'Device make': controllerDeviceMake.text,
                   'Device model': controllerDeviceModel.text,
+                  'Longitude': controllerLongitude.text,
+                  'Latitude': controllerLatitude.text,
                 };
 
 //add data to the database
@@ -225,14 +214,17 @@ class Device {
   final String deviceid;
   final String devicemake;
   final String devicemodel;
+  final String longitude;
+  final String latitude;
 
-  Device({
-    this.id = '',
-    required this.what3Words,
-    required this.deviceid,
-    required this.devicemake,
-    required this.devicemodel,
-  });
+  Device(
+      {this.id = '',
+      required this.what3Words,
+      required this.deviceid,
+      required this.devicemake,
+      required this.devicemodel,
+      required this.longitude,
+      required this.latitude});
 
   Map<String, dynamic> toJson() => {
         'id': id,
@@ -240,5 +232,7 @@ class Device {
         'Device number': deviceid,
         'Device make': devicemake,
         'Device model': devicemodel,
+        'Longitude': longitude,
+        'Latitude': latitude
       };
 }
