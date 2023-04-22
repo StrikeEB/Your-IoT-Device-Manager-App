@@ -1,13 +1,15 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:what3words/what3words.dart';
 
 import 'customappbar.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
+//create an instance of what3wordsv3 and pass your API key
+  var api = What3WordsV3('QQVQ4KZ6');
   runApp(LogDevicePage());
 }
 

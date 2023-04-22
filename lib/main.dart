@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'customappbar.dart';
 import 'logdevicepage.dart';
 import 'viewdevicespage.dart';
-import 'apidatapage.dart';
+import 'location_page.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -83,14 +83,14 @@ class LandingPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ApiDataPage()),
+                    MaterialPageRoute(builder: (context) => LocationPage()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromRGBO(2, 50, 82, 1),
                 ),
                 child: Text(
-                  'API data',
+                  'Location Page',
                   style: TextStyle(
                     fontSize: 30,
                   ),
