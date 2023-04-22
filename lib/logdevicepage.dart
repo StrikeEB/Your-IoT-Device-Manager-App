@@ -46,6 +46,9 @@ class _LogDevicePageState extends State<LogDevicePage> {
             const SizedBox(height: 24),
             const SizedBox(height: 32),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color.fromRGBO(2, 50, 82, 1),
+              ),
               child: Text('Submit'),
               onPressed: () {
                 final device = Device(
