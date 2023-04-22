@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'customappbar.dart';
 import 'logdevicepage.dart';
 import 'viewdevicespage.dart';
-import 'location_page.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -69,28 +68,6 @@ class LandingPage extends StatelessWidget {
                 ),
                 child: Text(
                   'View Devices',
-                  style: TextStyle(
-                    fontSize: 30,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 30),
-            SizedBox(
-              height: 100,
-              width: 300,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LocationPage()),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromRGBO(2, 50, 82, 1),
-                ),
-                child: Text(
-                  'Location Page',
                   style: TextStyle(
                     fontSize: 30,
                   ),
