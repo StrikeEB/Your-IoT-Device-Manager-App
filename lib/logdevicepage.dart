@@ -154,7 +154,7 @@ class _LogDevicePageState extends State<LogDevicePage> {
                   backgroundColor: Color.fromRGBO(2, 50, 82, 1),
                 ),
                 onPressed: _getCurrentPosition,
-                child: const Text("Get Current Location")),
+                child: const Text("Get address based on coordinates")),
             const SizedBox(height: 32),
             TextField(
               controller: controllerWhat3Words,
