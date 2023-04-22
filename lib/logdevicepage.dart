@@ -29,6 +29,8 @@ class _LogDevicePageState extends State<LogDevicePage> {
   final controllerDeviceID = TextEditingController();
   final controllerDeviceMake = TextEditingController();
   final controllerDeviceModel = TextEditingController();
+  final controllerLongitude = TextEditingController();
+  final controllerLatitude = TextEditingController();
   String? _currentAddress;
   Position? _currentPosition;
 
@@ -94,6 +96,14 @@ class _LogDevicePageState extends State<LogDevicePage> {
     }
   }
 
+  Future<void> _getCurrentLocation() async {
+    Position position = await Geolocator.getCurrentPosition();
+    setState(() {
+      controllerLongitude.text = position.longitude.toString();
+      controllerLatitude.text = position.latitude.toString();
+    });
+  }
+
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: CustomAppBar.getAppBar('Log a new device'),
@@ -116,6 +126,28 @@ class _LogDevicePageState extends State<LogDevicePage> {
               decoration: decoration('Device model'),
             ),
             const SizedBox(height: 24),
+            TextField(
+              controller: controllerLongitude,
+              decoration: decoration('Longitude'),
+            ),
+            const SizedBox(height: 24),
+            TextField(
+              controller: controllerLatitude,
+              decoration: decoration('Latitude'),
+            ),
+            const SizedBox(height: 24),
+            TextField(
+              controller: TextEditingController(text: _currentAddress),
+              decoration: decoration('Address'),
+            ),
+            const SizedBox(height: 24),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromRGBO(2, 50, 82, 1),
+                ),
+                onPressed: _getCurrentLocation,
+                child: const Text("Get Longitude")),
+            const SizedBox(height: 32),
             Text(
               'Latitude: ${_currentPosition?.latitude ?? ""}',
               style: TextStyle(fontWeight: FontWeight.bold),
