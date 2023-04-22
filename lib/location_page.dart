@@ -51,27 +51,28 @@ class _LocationPageState extends State<LocationPage> {
     final hasPermission = await _handleLocationPermission();
 
     if (!hasPermission) return;
-    await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high)
-        .then((Position position) {
-      setState(() => _currentPosition = position);
-      _getAddressFromLatLng(_currentPosition!);
-    }).catchError((e) {
-      debugPrint(e);
-    });
+    try {
+      _currentPosition = await Geolocator.getCurrentPosition(
+          desiredAccuracy: LocationAccuracy.high);
+      setState(() {});
+      await _getAddressFromLatLng(_currentPosition!);
+    } catch (e) {
+      debugPrint(e.toString());
+    }
   }
 
   Future<void> _getAddressFromLatLng(Position position) async {
-    await placemarkFromCoordinates(
-            _currentPosition!.latitude, _currentPosition!.longitude)
-        .then((List<Placemark> placemarks) {
+    try {
+      final placemarks =
+          await placemarkFromCoordinates(position.latitude, position.longitude);
       Placemark place = placemarks[0];
       setState(() {
         _currentAddress =
             '${place.street}, ${place.subLocality}, ${place.subAdministrativeArea}, ${place.postalCode}';
       });
-    }).catchError((e) {
-      debugPrint(e);
-    });
+    } catch (e) {
+      debugPrint(e.toString());
+    }
   }
 
   @override
