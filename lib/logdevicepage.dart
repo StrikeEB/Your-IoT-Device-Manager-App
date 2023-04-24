@@ -173,6 +173,15 @@ class _LogDevicePageState extends State<LogDevicePage> {
                 backgroundColor: Color.fromRGBO(2, 50, 82, 1),
               ),
               onPressed: () {
+                dataToSave = {
+                  'id': controllerDeviceID.text,
+                  'What3Words': controllerWhat3Words.text,
+                  'Device number': controllerDeviceID.text,
+                  'Device make': controllerDeviceMake.text,
+                  'Device model': controllerDeviceModel.text,
+                  'Longitude': controllerLongitude.text,
+                  'Latitude': controllerLatitude.text,
+                };
                 final device = Device(
                     what3Words: controllerWhat3Words.text,
                     deviceid: controllerDeviceID.text,
@@ -183,20 +192,10 @@ class _LogDevicePageState extends State<LogDevicePage> {
 
                 Navigator.pop(context);
 
-                Map<String, String> dataToSave = {
-                  'id': controllerDeviceID.text,
-                  'What3Words': controllerWhat3Words.text,
-                  'Device number': controllerDeviceID.text,
-                  'Device make': controllerDeviceMake.text,
-                  'Device model': controllerDeviceModel.text,
-                  'Longitude': controllerLongitude.text,
-                  'Latitude': controllerLatitude.text,
-                };
-
 //add data to the database
                 FirebaseFirestore.instance.collection("Device").add(dataToSave);
               },
-              child: Text('Submit'),
+              child: Text('Save the device'),
             )
           ],
         ),
@@ -225,14 +224,14 @@ class Device {
       required this.devicemodel,
       required this.longitude,
       required this.latitude});
-
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        'What3Words': what3Words,
-        'Device number': deviceid,
-        'Device make': devicemake,
-        'Device model': devicemodel,
-        'Longitude': longitude,
-        'Latitude': latitude
-      };
 }
+
+Map<String, dynamic> dataToSave = {
+  'id': '',
+  'What3Words': '',
+  'Device number': '',
+  'Device make': '',
+  'Device model': '',
+  'Longitude': '',
+  'Latitude': '',
+};
