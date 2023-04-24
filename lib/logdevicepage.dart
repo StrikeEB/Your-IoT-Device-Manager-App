@@ -12,8 +12,6 @@ import 'customappbar.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-//create an instance of what3wordsv3 and pass your API key
-  var api = What3WordsV3('QQVQ4KZ6');
   runApp(LogDevicePage());
 }
 
