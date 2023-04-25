@@ -164,7 +164,6 @@ class _LogDevicePageState extends State<LogDevicePage> {
                 ),
                 onPressed: () {
                   void main() async {
-                    // For all requests a what3words API key is needed
                     var api = What3WordsV3('QQVQ4KZ6');
 
                     // Get the user's location
@@ -231,6 +230,8 @@ class _LogDevicePageState extends State<LogDevicePage> {
 
 //add data to the database
                 FirebaseFirestore.instance.collection("Device").add(dataToSave);
+                final snackBar = SnackBar(content: Text('Device saved!'));
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
               },
               child: Text('Save the device'),
             )
