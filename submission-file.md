@@ -33,13 +33,14 @@ Your IoT Device Manager Application is aimed to help organisations track their I
 ## Biblography
 
 1. Amiguinho, E. (2022). mani-w3w. Available at: [https://github.com/StrikeEB/Your-IoT-Device-Manager-App](https://github.com/what3words/w3w-dart-wrapper/blob/master/example/convert_to_3wa_example.dart) (Accessed: 25 April 2023)
-2. 
+2. Coding with tea (A). (2023). How to store data in Firestore Flutter - Cloud Firestore 2023. Available at: [https://www.youtube.com/watch?v=LlQimtjqZ9A&ab_channel=CodingWithTea](https://www.youtube.com/watch?v=LlQimtjqZ9A&ab_channel=CodingWithTea) (Accessed: 25 April 2023)
+3. Coding with tea (B). (2023). How to Fetch Data from Cloud Firestore in Flutter [2023]. Available at: [https://www.youtube.com/watch?v=Kn2vOrznAxs&t=150s&ab_channel=CodingWithTea] (https://www.youtube.com/watch?v=Kn2vOrznAxs&t=150s&ab_channel=CodingWithTea) (Accessed: 25 April 2023) 
 
 ## Declaration of Authorship
 
-We, AUTHORS NAME HERE, confirm that the work presented in this assessment is my own. Where information has been derived from other sources, I confirm that this has been indicated in the work.
+We, Edita Butkute, confirm that the work presented in this assessment is my own. Where information has been derived from other sources, I confirm that this has been indicated in the work.
 
 
 Digitally Sign with Your name Here
 
-ASSESSMENT DATE
+25 April 2023
