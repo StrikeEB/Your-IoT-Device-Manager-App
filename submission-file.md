@@ -32,7 +32,7 @@ Your IoT Device Manager Application is aimed to help organisations track their I
 
 ## Biblography
 
-1. Amiguinho, E. (2022). mani-w3w. Available at: [https://github.com/StrikeEB/Your-IoT-Device-Manager-App](https://github.com/what3words/w3w-dart-wrapper/blob/master/example/convert_to_3wa_example.dart)
+1. Amiguinho, E. (2022). mani-w3w. Available at: [https://github.com/StrikeEB/Your-IoT-Device-Manager-App](https://github.com/what3words/w3w-dart-wrapper/blob/master/example/convert_to_3wa_example.dart) (Accessed: 25 April 2023)
 2. 
 
 ## Declaration of Authorship
