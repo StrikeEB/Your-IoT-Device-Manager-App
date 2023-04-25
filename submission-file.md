@@ -20,8 +20,8 @@ Upload this PDF into Moodle for submission including a copy of your presentation
 
 ## Link to GitHub Repository
 
-Flutter Application Name - MY APPLICATION NAME
-GitHub Repository - [https://github.com/ucl-casa-ce/casa0015-mobile-assessment](https://github.com/ucl-casa-ce/casa0015-mobile-assessment)
+Flutter Application Name - Your IoT Device Manager
+GitHub Repository - [https://github.com/StrikeEB/Your-IoT-Device-Manager-App]([https://github.com/StrikeEB/Your-IoT-Device-Manager-App)
 
 ## Introduction to Application
 
