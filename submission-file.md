@@ -23,7 +23,7 @@ Upload this PDF into Moodle for submission including a copy of your presentation
 Flutter Application Name - Your IoT Device Manager
 
 
-GitHub Repository - [https://github.com/StrikeEB/Your-IoT-Device-Manager-App]([https://github.com/StrikeEB/Your-IoT-Device-Manager-App)
+GitHub Repository - [https://github.com/StrikeEB/Your-IoT-Device-Manager-App](https://github.com/StrikeEB/Your-IoT-Device-Manager-App)
 
 ## Introduction to Application
 
@@ -32,11 +32,8 @@ Your IoT Device Manager Application is aimed to help organisations track their I
 
 ## Biblography
 
-1. Last name, First initial. (Year published). Title. Edition. (Only include the edition if it is not the first edition) City published: Publisher, Page(s). <http://google.com>
-
-2. Last name, First initial. (Year published). Title. Edition. (Only include the edition if it is not the first edition) City published: Publisher, Page(s).  <http://google.com>
-
-----
+1. Amiguinho, E. (2022). mani-w3w. Available at: [https://github.com/StrikeEB/Your-IoT-Device-Manager-App](https://github.com/what3words/w3w-dart-wrapper/blob/master/example/convert_to_3wa_example.dart)
+2. 
 
 ## Declaration of Authorship
 
