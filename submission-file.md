@@ -21,12 +21,14 @@ Upload this PDF into Moodle for submission including a copy of your presentation
 ## Link to GitHub Repository
 
 Flutter Application Name - Your IoT Device Manager
+
+
 GitHub Repository - [https://github.com/StrikeEB/Your-IoT-Device-Manager-App]([https://github.com/StrikeEB/Your-IoT-Device-Manager-App)
 
 ## Introduction to Application
 
-A brief 200 word explanation of your application and it's use.  Below create a Bibliography to code, tutorial, or plugins you've used in the project. Use this guide
-for citation - [https://www.scribbr.co.uk/referencing/harvard-website-reference/](https://www.scribbr.co.uk/referencing/harvard-website-reference/)
+
+Your IoT Device Manager Application is aimed to help organisations track their IoT Devices effectively. The end product of the App would help to log information about devices, location, pictures of the installation in a structured way and upload that to an online database (Firestore). This database would act as the master list for all devices and then by interacting with devices' outputs, it would enable big data analysis. 
 
 ## Biblography
 
