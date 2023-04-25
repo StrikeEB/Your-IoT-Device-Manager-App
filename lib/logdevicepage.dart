@@ -217,6 +217,7 @@ class _LogDevicePageState extends State<LogDevicePage> {
                   'Device model': controllerDeviceModel.text,
                   'Longitude': controllerLongitude.text,
                   'Latitude': controllerLatitude.text,
+                  'Address': controllerAddress.text,
                 };
                 final device = Device(
                     what3Words: controllerWhat3Words.text,
@@ -224,7 +225,8 @@ class _LogDevicePageState extends State<LogDevicePage> {
                     devicemake: controllerDeviceMake.text,
                     devicemodel: controllerDeviceModel.text,
                     longitude: controllerLongitude.text,
-                    latitude: controllerLatitude.text);
+                    latitude: controllerLatitude.text,
+                    address: controllerAddress.text);
 
                 Navigator.pop(context);
 
@@ -253,6 +255,7 @@ class Device {
   final String devicemodel;
   final String longitude;
   final String latitude;
+  final String address;
 
   Device(
       {this.id = '',
@@ -261,7 +264,8 @@ class Device {
       required this.devicemake,
       required this.devicemodel,
       required this.longitude,
-      required this.latitude});
+      required this.latitude,
+      required this.address});
 }
 
 Map<String, dynamic> dataToSave = {
@@ -272,4 +276,5 @@ Map<String, dynamic> dataToSave = {
   'Device model': '',
   'Longitude': '',
   'Latitude': '',
+  'Address': '',
 };
