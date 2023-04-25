@@ -38,7 +38,7 @@ Your IoT Device Manager Application is aimed to help organisations track their I
 
 ## Declaration of Authorship
 
-We, Edita Butkute, confirm that the work presented in this assessment is my own. Where information has been derived from other sources, I confirm that this has been indicated in the work.
+I, Edita Butkute, confirm that the work presented in this assessment is my own. Where information has been derived from other sources, I confirm that this has been indicated in the work.
 
 
 Digitally Sign with Your name Here
